@@ -35,5 +35,41 @@ def concatenate_kwargs(**kwargs):
         my_name+=name
     return my_name
 
+def concat(**names):
+    for name in names.values():
+        print(name)
+
+
+concat(a="Bree",b="Breaye",c="Brenda")   
+
+def demo(name,age):
+    print(name,age)
+
+demo("Bree",20)
+
+def my_name(*args):
+    for i in args:
+        print(i)
+my_name(20,30,50,40)  
+
+
+def my_name(**kwargs):
+    for n in kwargs.values():
+        print(n)
+my_name(a=20,b=30,c=20,d=10)        
     
-    
+# list1=[10,12,13,14,12,15,16]
+# list2=[12,10,13,29,14,15]
+# list=list1.intersection(list2)
+# print(list)
+
+def common_items(a,b):
+    a_set=set(a)
+    b_set=set(b)
+    if len(a_set.intersection(b_set))>0:
+        return(a_set.intersection(b_set))
+    else:
+        return("no common numbers")
+a=[5,6,7,8,9] 
+b=[6,7,3,10,12,5] 
+print(common_items(a,b))  
