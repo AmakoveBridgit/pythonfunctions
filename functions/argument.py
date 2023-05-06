@@ -16,6 +16,14 @@ def multiply_many(**kwargs):
     for num in kwargs.values():
         answer*=num
     return answer
+
+def multiply(**kwargs):
+    answer=1
+    for num in kwargs.values():
+        answer*=num
+        return answer
+
+
     
     # A function named concatenate_args that takes any 
     # number of string arguments in positional arguments 
