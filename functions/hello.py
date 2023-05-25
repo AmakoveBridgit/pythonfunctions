@@ -7,3 +7,6 @@ def welcome(student,school):
 def addition (num1,num2) :
      sum=num1 +num2
      print(sum) 
+
+ x=["apple","banana","cherry"]  
+x[1] ="mango"

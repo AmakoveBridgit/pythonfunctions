@@ -58,3 +58,17 @@ print(my_info)
 # deleting items 
 del my_info['age']
 print(my_info)
+
+
+x=["apple","mangoes","oranges"]
+i=0
+while i<len(x):
+     print(x[i])
+     i=i+1
+
+     # list comprehension
+     newlist=[]
+     for i in x :
+          if "a" in x:
+               newlist.append(x)
+     print(newlist)

@@ -61,10 +61,10 @@ def my_name(*args):
 my_name(20,30,50,40)  
 
 
-def my_name(**kwargs):
+def my_numbers(**kwargs):
     for n in kwargs.values():
         print(n)
-my_name(a=20,b=30,c=20,d=10)        
+my_numbers(a=20,b=30,c=20,d=10)        
     
 # list1=[10,12,13,14,12,15,16]
 # list2=[12,10,13,29,14,15]

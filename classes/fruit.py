@@ -4,6 +4,10 @@ class Fruit:
         self.size=size
         self.shape=shape
 
+        # rot
+        # germinate
+        # color
+
       def eat_fruit(self):
           return f"I love eating {self.name}"
       

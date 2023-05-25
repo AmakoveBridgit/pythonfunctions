@@ -2,14 +2,19 @@
    
 class Car:
     
-    def __init__(self,model,make,speed) :
+    def __init__(self,model,make,registration) :
         self.model=model
         self.make=make
-        self.speed=speed 
+        self.registration=registration
+
+        # carry people
+        # autonomous packing
+        # turn on lights
 
     def accelerate(self):
        self.accelerate=30
        return self.accelerate +self.speed
+    
     
     
 

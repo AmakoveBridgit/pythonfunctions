@@ -4,6 +4,11 @@ def even_numbers():
         if i%2==0:
             print(i)
 
+def even():
+    x=range(20)
+    for i in x:
+        if i %2==0:
+            print(i)
 
 def odd_numbers():
     x=range(20) 
@@ -119,7 +124,6 @@ list_of_integers()
 # Write a function that takes any two integers as input, and prints 
 # the sum of all the numbers between the two integers (inclusive) that are divisible by 3.
 def sum_numbers(a,b):
-    # x=range(20,30)
     sum=0
     for i in x:
          if i% 3==0:
@@ -131,6 +135,10 @@ def sum_numbers(a,b):
             sum=sum+i
             print(sum)
 print(sum_numbers(10,20)) 
+
+
+
+
 
 for num in range(3,9):
     if num ==5:
@@ -185,6 +193,12 @@ def calc_avg():
     avg=sum/len(x) 
     return avg   
 print(calc_avg())
+def get_avg():
+    sum =0
+    for i in range(55,100):
+        sum=sum +i
+        avg=sum/ len(range(55,100))
+        return avg
 
 
 
