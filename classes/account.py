@@ -1,11 +1,11 @@
 class Bank:
-    def __init__(self, account_number, balance, interest_rate):
+    def __init__(self, account_number, interest_rate):
         self.account_number = account_number
-        self.balance = balance
+        self.balance = 0
         self.interest_rate = interest_rate
         self.deposits = []
         self.withdrawals = []
-        self.balance = 0
+    
    
     def check_balance(self):
         return f"Your current account balance is ${self.balance}"
@@ -36,15 +36,16 @@ class Bank:
 
     def borrow_loan(self, amount):
         if self.loan_balance > 0:
-            return "You already have an outstanding loan"
+            return f"You already have an outstanding loan"
         elif amount <= 100:
-            return "Loan amount must be greater than 100"
+            return f"Loan amount must be greater than 100"
         elif len(self.deposits) < 10:
-            return "You must have made at least 10 deposits to be eligible for a loan"
+            return f"You must have made at least 10 deposits to be eligible for a loan"
         elif amount > sum([deposit['amount'] for deposit in self.deposits])/3:
             return "Loan amount requested is more than 1/3 of your total deposits"
         else:
             self.loan_balance += amount
+            self.balance=amount
             return f"Your loan of ${amount} was successful. Your new loan balance is ${self.loan_balance}"
 
 
@@ -52,7 +53,9 @@ class Bank:
         if amount > self.loan_balance:
             self.balance += amount - self.loan_balance
             self.loan_balance = 0
-            return f"You have successfully repaid your loan. Your new balance is ${self.balance}"
+            return f"You have successfully repaid your loan"
+        
+        
         else:
             self.loan_balance -= amount
             return f"You have successfully repaid ${amount} of your loan. Your new loan balance is ${self.loan_balance}"  
@@ -60,11 +63,13 @@ class Bank:
 
     def transfer(self, amount, account):
         if amount > self.balance:
-            return f"Insufficient funds. Your current balance is ${self.balance}"
-        else:
+      
             self.balance -= amount
             account.deposit(amount)
+            
             return f"You have successfully transferred ${amount} to account {account.account_number}. Your new balance is ${self.balance}"
+        else:
+             return f"Insufficient funds to make the transfer"
 
 # Create a new bank account with initial balance of $1000 and an interest rate of 5%
 my_account = Bank("7770178528995", 5000, 0.15)
